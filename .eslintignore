@@ -1,0 +1,7 @@
+tests/
+__tests__/
+coverage/
+__coverage__/
+.*rc.js
+*.config.js
+node_modules

@@ -1,0 +1,17 @@
+{
+    "editor.tabSize": 4,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true,
+        "source.fixAll.eslint": true,
+        "source.organizeImports": true
+    },
+    "files.associations": {
+        ".lintstagedrc": "json"
+    },
+    "eslint.enable": true,
+    "eslint.validate": [
+        "javascript",
+        "typescript"
+    ],
+    "typescript.tsdk": "node_modules/typescript/lib"
+}
