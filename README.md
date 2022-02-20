@@ -1,5 +1,7 @@
 # free-dedupe
 
+working in progress, coming soon...
+
 > De-duplicate (Uniqueify) a arrays with custom logic
 
 ## install
