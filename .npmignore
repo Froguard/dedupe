@@ -6,8 +6,13 @@ log*
 node_modules/
 tmp*/
 
-.vscode/
 .husky/
+.vscode/
+.eslintignore
+.eslintrc.js
+.lintstagedrc
+.nodemonrc.json
+.nvmrc
 
 tests/
 __tests__/
@@ -22,8 +27,7 @@ demo.ts
 demo.js
 demo.d.ts
 
-index.js
-index.d.ts
+index.ts
 
 *.config.js
 *.config.ts

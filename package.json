@@ -1,6 +1,6 @@
 {
   "name": "free-dedupe",
-  "version": "0.0.1-a",
+  "version": "0.0.2",
   "description": "De-duplicate (Uniqueify) a arrays with custom logic",
   "author": "Froguard <figure_wf@163.com>",
   "main": "index.js",
@@ -9,7 +9,7 @@
     "dev": "nodemon --config './.nodemonrc.json' demo.ts",
     "clear": "rm -rf ./index.js & rm -rf ./index.d.ts",
     "prebuild": "npm run clear",
-    "build": "tsc ./index.ts",
+    "build": "tsc",
     "test": "jest",
     "pretest:cover": "rm -rf ./__coverage__",
     "test:cover": "jest --coverage",
