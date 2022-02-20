@@ -1,3 +1,4 @@
+/// <reference types="./index.d.ts"> 
 /**
  * dedupe
  * @param {array} arr

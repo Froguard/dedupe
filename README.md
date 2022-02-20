@@ -8,7 +8,7 @@ working in progress, coming soon...
 
 ```sh
 npm i -S free-dedupe
-# yarn add -S free-dedupe
+# yarn add free-dedupe
 ```
 
 ## usage

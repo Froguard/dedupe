@@ -15,9 +15,9 @@
     "test:cover": "jest --coverage",
     "lint": "lint-staged",
     "lint:fix": "eslint --fix '**/*.ts'",
-    "postinstall": "husky install",
     "prerelease": "npm rum build",
-    "release": "npm run publish",
+    "release": "npm publish --regitry=https://registry.npmjs.org",
+    "_postinstall": "husky install",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable"
   },
