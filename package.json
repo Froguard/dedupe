@@ -16,6 +16,8 @@
     "lint": "lint-staged",
     "lint:fix": "eslint --fix '**/*.ts'",
     "postinstall": "husky install",
+    "prerelease": "npm rum build",
+    "release": "npm run publish",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable"
   },
