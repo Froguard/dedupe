@@ -15,7 +15,8 @@
         "allowUnusedLabels": true,
         "allowUnreachableCode": true,
         "skipDefaultLibCheck": true,
-        "skipLibCheck": false
+        "skipLibCheck": false,
+        "strictNullChecks": false
     },
     "include": ["index.ts"],
     "exclude": [

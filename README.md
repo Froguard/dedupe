@@ -36,9 +36,19 @@ console.log(dedupe([1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4]));  // 1,2,3,4
 ```ts
 import dedupe from 'free-dedupe';
 
-console.log(dedupe(
-    [ {id:1, name:'Tom'}, {id:2, name:'Tom'}, {id:3, name:'Joe'} ], 
-    (item: any) => item.id)
+console.log(
+    dedupe(
+        [ {id:1, name:'Tom'}, {id:2, name:'Tom'}, {id:3, name:'Joe'} ], 
+        (item: any) => item.id
+    )
+); // Tom(id=1), Tom(id=2), Joe(id=3)
+
+
+console.log(
+    dedupe(
+        [ {id:1, name:'Tom'}, {id:2, name:'Tom'}, {id:3, name:'Joe'} ], 
+        [ 'id' ] // 'id'
+    )
 ); // Tom(id=1), Tom(id=2), Joe(id=3)
 ```
 
@@ -47,4 +57,6 @@ console.log(dedupe(
 #### `dedupe(array, getSeedFn)`
 
 - array: list of element
-- getSeedFn: a function whit you custom detect duplicate logic
+- getSeedFn: 
+    - a function whit you custom detect duplicate logic
+    - a obj key or key list, (key: string| symbol | number )
