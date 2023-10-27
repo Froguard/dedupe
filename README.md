@@ -1,7 +1,5 @@
 # free-dedupe
 
-working in progress, coming soon...
-
 > De-duplicate (Uniqueify) a arrays with custom logic
 
 ## install
@@ -54,9 +52,9 @@ console.log(
 
 ## API
 
-#### `dedupe(array, getSeedFn)`
+#### `dedupe(array: any[], getSeed: string | string[] | ((item:any,index,arr:any[]) => any))`
 
 - array: list of element
-- getSeedFn: 
-    - a function whit you custom detect duplicate logic
-    - a obj key or key list, (key: string| symbol | number )
+- getSeed: 
+    - a function whit you custom detect duplicate logic, eg: `function cb(ele,idx,list) { ... return xxx; }`
+    - a obj key or key list, (key: string| symbol | number ), eg: `'k1'`, `['k1', 'k2', ...]`
