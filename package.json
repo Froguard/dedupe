@@ -1,6 +1,6 @@
 {
   "name": "free-dedupe",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "De-duplicate (Uniqueify) a arrays with custom logic",
   "author": "Froguard <figure_wf@163.com>",
   "main": "index.js",

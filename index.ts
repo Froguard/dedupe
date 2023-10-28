@@ -42,7 +42,7 @@ export type UniqGetSeed<ItemT> = ItemT extends NormalType ? GetSeedFunc<ItemT> :
  *    { key: 3, data: 'xxx' },
  *   ];
  */
-export default function dedupe<ItemT = any>(list: ItemT[], getSeed?: UniqGetSeed<ItemT>) {
+export function dedupe<ItemT = any>(list: ItemT[], getSeed?: UniqGetSeed<ItemT>) {
   let _getSeedFn: GetSeedFunc<ItemT> = null;
   // detect getSeed type
   const typeOfGetSeed = Object.prototype.toString.call(getSeed).slice(8, -1).toLowerCase();
@@ -79,3 +79,6 @@ export default function dedupe<ItemT = any>(list: ItemT[], getSeed?: UniqGetSeed
     return !tmp.has(seed) && tmp.add(seed); // set.has is faster than arr.includes
   });
 }
+
+// default
+export default dedupe;

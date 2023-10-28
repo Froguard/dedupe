@@ -15,6 +15,7 @@ npm i -S free-dedupe
 
 ```js
 const dedupe = require('free-dedupe').default;
+// const { dedupe } = require('free-dedupe'); // other way to import
 
 console.log(dedupe([1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4]));  // 1,2,3,4
 ```
