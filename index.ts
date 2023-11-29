@@ -1,14 +1,15 @@
 /// <reference types="./index.d.ts"> 
 
+// normal define
 export type NormalType = string | boolean | symbol | number | bigint | null | undefined;
 export type NormalObjectKey = string | symbol | number;
 export type NormalObject = Record<NormalObjectKey, any>;
 
-// function
+// getFeed is function
 export type GetSeedFunc<ItemT = any> = (item: ItemT, index?: number, arr?: ItemT[]) => any;
-// key | keys
+// getFeed is key | keys
 export type GetSeedkey = NormalObjectKey[] | NormalObjectKey;
-// 
+// getFeed is combine type
 export type UniqGetSeed<ItemT> = ItemT extends NormalType ? GetSeedFunc<ItemT> : GetSeedFunc<ItemT> | GetSeedkey;
 
 // overload defines:
