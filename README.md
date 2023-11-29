@@ -15,7 +15,6 @@ npm i -S free-dedupe
 
 ```js
 const dedupe = require('free-dedupe').default;
-// const { dedupe } = require('free-dedupe'); // other way to import
 
 console.log(dedupe([1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4]));  // 1,2,3,4
 ```
@@ -56,6 +55,37 @@ console.log(
 #### `dedupe(array: any[], getSeed: string | string[] | ((item:any,index,arr:any[]) => any))`
 
 - array: list of element
-- getSeed: 
-    - a function whit you custom detect duplicate logic, eg: `function cb(ele,idx,list) { ... return xxx; }`
-    - a obj key or key list, (key: string| symbol | number ), eg: `'k1'`, `['k1', 'k2', ...]`
+- getSeed:
+  - a function whit you custom detect duplicate logic, eg: `function cb(ele,idx,list) { ... return xxx; }`
+  - a obj key or key list, (key: string| symbol | number ), eg: `'k1'`, `['k1', 'k2', ...]`
+
+```ts
+/**
+ * dedupe simple item list, detect unique by simple value
+ * @param {array} list
+ */
+export default function dedupe<T extends NormalType>(list: T[]): T[];
+/**
+ * dedupe simple item list, detect unique by function (custom logic)
+ * @param {array} list
+ */
+export default function dedupe<T extends NormalType>(list: T[], getSeed: GetSeedFunc<T>): T[];
+/**
+ * dedupe object list, detect unique by single key (of object item'props)
+ * @param {array} list
+ * @param {string} key
+ */
+export default function dedupe<T extends NormalObject, K extends keyof T>(list: T[], key: K): T[];
+/**
+ * dedupe object list, detect unique by multiple keys (keyof object)
+ * @param {array} list
+ * @param {array<string>} keys
+ */
+export default function dedupe<T extends NormalObject, K extends keyof T>(list: T[], keys: K[]): T[];
+/**
+ * dedupe object list, detect unique by function (custom logic)
+ * @param {array} list
+ * @param {function} getSeed
+ */
+export default function dedupe<T extends NormalObject>(list: T[], getSeed: GetSeedFunc<T>): T[];
+```
