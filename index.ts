@@ -1,16 +1,47 @@
 /// <reference types="./index.d.ts"> 
 
-type NormalType = string | boolean | symbol | number | bigint | null | undefined;
-type NormalObjectKey = string | symbol | number;
-type NormalObject = Record<NormalObjectKey, any>;
+export type NormalType = string | boolean | symbol | number | bigint | null | undefined;
+export type NormalObjectKey = string | symbol | number;
+export type NormalObject = Record<NormalObjectKey, any>;
 
 // function
-type GetSeedFunc<ItemT = any> = (item: ItemT, index?: number, arr?: ItemT[]) => any;
-// key
-type GetSeedkey = NormalObjectKey[] | NormalObjectKey;
-//
+export type GetSeedFunc<ItemT = any> = (item: ItemT, index?: number, arr?: ItemT[]) => any;
+// key | keys
+export type GetSeedkey = NormalObjectKey[] | NormalObjectKey;
+// 
 export type UniqGetSeed<ItemT> = ItemT extends NormalType ? GetSeedFunc<ItemT> : GetSeedFunc<ItemT> | GetSeedkey;
 
+// overload defines:
+/**
+ * dedupe simple item list, detect unique by simple value
+ * @param {array} list 
+ */
+export default function dedupe<T extends NormalType>(list: T[]): T[];
+/**
+ * dedupe simple item list, detect unique by function (custom logic)
+ * @param {array} list 
+ */
+export default function dedupe<T extends NormalType>(list: T[], getSeed: GetSeedFunc<T>): T[];
+/**
+ * dedupe object list, detect unique by single key (of object item'props)
+ * @param {array} list 
+ * @param {string} key 
+ */
+export default function dedupe<T extends NormalObject, K extends keyof T>(list: T[], key: K): T[];
+/**
+ * dedupe object list, detect unique by multiple keys (keyof object)
+ * @param {array} list 
+ * @param {array<string>} keys 
+ */
+export default function dedupe<T extends NormalObject, K extends keyof T>(list: T[], keys: K[]): T[];
+/**
+ * dedupe object list, detect unique by function (custom logic)
+ * @param {array} list 
+ * @param {function} getSeed 
+ */
+export default function dedupe<T extends NormalObject>(list: T[], getSeed: GetSeedFunc<T>): T[];
+
+// implement：
 /**
  * dedupe a list, and return another new list
  * @param {array<T>} list
@@ -79,3 +110,4 @@ export default function dedupe<ItemT = any>(list: ItemT[], getSeed?: UniqGetSeed
     return !tmp.has(seed) && tmp.add(seed); // set.has is faster than arr.includes
   });
 }
+

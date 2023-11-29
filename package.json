@@ -1,6 +1,6 @@
 {
   "name": "free-dedupe",
-  "version": "0.0.3",
+  "version": "0.0.6",
   "description": "De-duplicate (Uniqueify) a arrays with custom logic",
   "author": "Froguard <figure_wf@163.com>",
   "main": "index.js",
@@ -17,7 +17,7 @@
     "lint:fix": "eslint --fix '**/*.ts'",
     "prerelease": "npm rum build",
     "release": "npm publish --regitry=https://registry.npmjs.org",
-    "postinstall": "husky install",
+    "_postinstall": "husky install",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable"
   },
