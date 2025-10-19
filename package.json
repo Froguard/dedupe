@@ -1,6 +1,6 @@
 {
   "name": "free-dedupe",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "De-duplicate (Uniqueify) a arrays with custom logic",
   "author": "Froguard <figure_wf@163.com>",
   "main": "index.js",
@@ -21,16 +21,13 @@
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable"
   },
-  "dependencies": {},
   "devDependencies": {
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-typescript": "^7.16.7",
-    "@types/debug": "^4.1.7",
     "@types/jest": "^27.4.0",
     "@typescript-eslint/eslint-plugin": "^5.10.1",
     "@typescript-eslint/parser": "^5.10.1",
     "chalk": "^4.1.2",
-    "debug": "^4.3.3",
     "eslint": "^8.7.0",
     "husky": "^7.0.1",
     "jest": "^27.4.0",
