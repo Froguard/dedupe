@@ -1,8 +1,9 @@
 {
     "compilerOptions": {
-        "target": "ES5",
+        "target": "es5",
         "module": "commonjs",
         "moduleResolution": "node",
+        "ignoreDeprecations":"6.0",
         "declaration": true,
         "sourceMap": false,
         "removeComments": false,
